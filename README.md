@@ -1,7 +1,7 @@
 [![Read the Docs](https://img.shields.io/readthedocs/capture2go)](https://capture2go.readthedocs.io/)
 [![PyPI version](https://img.shields.io/pypi/v/capture2go)](https://pypi.org/project/capture2go/)
 [![Python versions](https://img.shields.io/pypi/pyversions/capture2go)](https://pypi.org/project/capture2go/)
-[![License: MIT](https://img.shields.io/github/license/sensorstim/capture2go)](https://github.com/sensorstim/capture2go/blob/main/LICENSES/MIT.txt)
+[![License: MIT](https://img.shields.io/github/license/sensorstim/capture2go_sdk)](https://github.com/sensorstim/capture2go_sdk/blob/main/LICENSES/MIT.txt)
 
 # Capture2Go Python SDK
 <!--

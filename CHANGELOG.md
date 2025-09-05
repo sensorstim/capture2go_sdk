@@ -11,7 +11,6 @@ Types of changes
 ### Removed (for now removed features)
 ### Fixed (for any bug fixes)
 ### Security (in case of vulnerabilities)
-
 -->
 
 # Changelog
@@ -23,10 +22,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.8.0] - 2025-09-05
+
 ### Added
 
 - Initial release.
 
 [unreleased]: https://github.com/sensorstim/capture2go_sdk/compare/v0.8.0...HEAD
 [0.8.0]: https://github.com/sensorstim/capture2go_sdk/releases/tag/v0.8.0
-

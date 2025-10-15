@@ -4,6 +4,10 @@
 
 import ctypes
 import zlib
+from collections import defaultdict
+from pathlib import Path
+
+import numpy as np
 
 from . import pkg
 
@@ -169,3 +173,47 @@ class Unpacker:
             self.feed(self.f.read(N - len(self.buffer)))
         if len(self.buffer) < N:
             raise StopIteration
+
+
+def loadBinaryFile(filename: str | Path) -> dict[str, dict[str, np.ndarray]]:
+    """
+    Load and parse a binary Capture2Go recording file into NumPy arrays.
+
+    This function reads a binary file (optionally gzip-compressed), unpacks all packages, and organizes them by
+    package type. Each package type is converted to a dictionary of NumPy arrays, with one array per field.
+
+    Args:
+        filename (str | Path): Path to the binary recording file. Can be a string or pathlib.Path object.
+            Files with a `.gz` extension are automatically decompressed.
+
+    Returns:
+        Nested dictionary where the outer key is the package class name (e.g., ``DataFullPacked200Hz``) and the value
+        is a dictionary mapping field names to NumPy arrays containing all values for that field.
+    """
+    entries_by_key = defaultdict(list)
+    is_gzip = Path(filename).suffix == '.gz'
+    if is_gzip:
+        import gzip
+
+    with gzip.open(filename, 'rb') if is_gzip else open(filename, 'rb') as f:
+        unpacker = Unpacker(f, ignoreInitialGarbage=True)
+        for package in unpacker:
+            key = package.__class__.__name__
+            entries_by_key[key].append(package.parse())
+
+    data: dict[str, dict[str, np.ndarray]] = {}
+    for key, entries in entries_by_key.items():
+        if not entries:
+            continue
+        data[key] = {}
+        for k in entries[0]:
+            first = entries[0][k]
+            if isinstance(first, np.ndarray):
+                if first.ndim == 2:
+                    val = np.concatenate([e[k] for e in entries])
+                else:
+                    val = np.array([e[k] for e in entries])
+            else:
+                val = np.array([e[k] for e in entries])
+            data[key][k] = val
+    return data

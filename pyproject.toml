@@ -8,7 +8,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "capture2go"
-version = "0.8.0"
+version = "1.0.0"
 description = "SDK for Capture2Go, the wearable sensor platform by SensorStim Neurotechnology GmbH."
 authors = [
     { name="SensorStim Neurotechnology GmbH", email="support@capture2go.com" }

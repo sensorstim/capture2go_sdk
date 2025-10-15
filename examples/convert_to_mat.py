@@ -5,46 +5,17 @@
 
 import os
 import argparse
-import gzip
-import numpy as np
 import scipy.io as spio
-from collections import defaultdict
 
-import capture2go
+import capture2go as c2g
 
 
 def dumpFile(filename: str):
     print(f'{filename}:')
     with open(filename, 'rb') as f:
-        unpacker = capture2go.Unpacker(f)
+        unpacker = c2g.Unpacker(f)
         for entry in unpacker:
             print(entry)
-
-
-def loadFile(filename: str) -> dict[str, dict[str, np.ndarray]]:
-    entries_by_key = defaultdict(list)
-    with gzip.open(filename, 'rb') if filename.endswith('.gz') else open(filename, 'rb') as f:
-        unpacker = capture2go.Unpacker(f, ignoreInitialGarbage=True)
-        for pkg in unpacker:
-            key = pkg.__class__.__name__
-            entries_by_key[key].append(pkg.parse())
-
-    data: dict[str, dict[str, np.ndarray]] = {}
-    for key, entries in entries_by_key.items():
-        if not entries:
-            continue
-        data[key] = {}
-        for k in entries[0]:
-            first = entries[0][k]
-            if isinstance(first, np.ndarray):
-                if first.ndim == 2:
-                    val = np.concatenate([e[k] for e in entries])
-                else:
-                    val = np.array([e[k] for e in entries])
-            else:
-                val = np.array([e[k] for e in entries])
-            data[key][k] = val
-    return data
 
 
 def generateMatFilename(filename: str, out: str | None):
@@ -82,7 +53,7 @@ def main():
 
     for file in args.files:
         out = generateMatFilename(file, args.out)
-        data = loadFile(file)
+        data = c2g.loadBinaryFile(file)
         spio.savemat(out, data, long_field_names=True, do_compression=True, oned_as='column')
 
 

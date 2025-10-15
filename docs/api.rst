@@ -53,6 +53,8 @@ Parsing
    :undoc-members:
    :show-inheritance:
 
+.. autofunction:: loadBinaryFile
+
 Exceptions
 ----------
 

@@ -159,4 +159,4 @@ Key features demonstrated:
 * Exporting to MATLAB ``.mat`` format for further analysis.
 
 .. note::
-    The resulting ``.mat`` is a nested struct, with one key per package type. For each value, the data from multiple packages is joined into a single array. Use the processing code from this example as a starting point for further data processing. This approach is useful if you prefer a more low-level alternative to the CSV files created by the `mobile measurement app <https://capture2go.com/app>`__.
+    The resulting ``.mat`` is a nested struct, with one key per package type. For each value, the data from multiple packages is joined into a single array. Use the output from the `loadBinaryFile` function as a starting point for further data processing. This approach is useful if you prefer a more low-level alternative to the CSV files created by the `mobile measurement app <https://capture2go.com/app>`__.

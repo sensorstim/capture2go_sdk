@@ -22,11 +22,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0] - 2025-10-15
+
+### Added
+
+- `capture2go.loadBinaryFile` function.
+
+### Fixed
+
+- Avoid usage of Python 3.12 f-string features.
+
 ## [0.8.0] - 2025-09-05
 
 ### Added
 
 - Initial release.
 
-[unreleased]: https://github.com/sensorstim/capture2go_sdk/compare/v0.8.0...HEAD
+[unreleased]: https://github.com/sensorstim/capture2go_sdk/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/sensorstim/capture2go_sdk/compare/v0.8.0...v1.0.0
 [0.8.0]: https://github.com/sensorstim/capture2go_sdk/releases/tag/v0.8.0

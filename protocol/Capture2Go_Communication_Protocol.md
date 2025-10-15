@@ -477,6 +477,7 @@ sequenceDiagram
 | FILE_TOO_SHORT           | 0xF4 (244) | File is too short.                          |
 | FILE_NAME_INVALID        | 0xF5 (245) | File name is invalid.                       |
 | FILE_SYSTEM_FULL         | 0xF6 (246) | File system is full.                        |
+| FILE_SYSTEM_BUSY         | 0xF7 (247) | File system is busy.                        |
 | RECORDING_CONFIG_NOT_SET | 0xF9 (249) | Recording configuration is not set.         |
 | CALIB_PARAM_FLASH_ERROR  | 0xFA (250) | Error when flashing calibration parameters. |
 | WRONG_STATE              | 0xFB (251) | Device is in the wrong state.               |

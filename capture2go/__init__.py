@@ -11,4 +11,4 @@ from .device import (
 )
 from .ble import BleScanner, BleDevice, connect
 from .usb import UsbDevice
-from .parsing import Unpacker
+from .parsing import Unpacker, loadBinaryFile

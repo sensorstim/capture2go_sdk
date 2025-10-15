@@ -4,6 +4,7 @@
 
 __pycache__/
 *.egg-info/
+.DS_Store
 /dist/
 /docs/_build/
 /examples/*-*-*_*_Recording/

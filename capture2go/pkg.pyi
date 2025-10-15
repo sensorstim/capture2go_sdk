@@ -515,6 +515,8 @@ class ErrorCode(enum.IntEnum):
     """File name is invalid."""
     FILE_SYSTEM_FULL = 0xF6
     """File system is full."""
+    FILE_SYSTEM_BUSY = 0xF7
+    """File system is busy."""
     RECORDING_CONFIG_NOT_SET = 0xF9
     """Recording configuration is not set."""
     CALIB_PARAM_FLASH_ERROR = 0xFA

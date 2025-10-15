@@ -341,7 +341,7 @@ class AbstractDevice:
 
                 if isinstance(package, pkg.DataDeviceInfo):
                     self.deviceInfo = package
-                    self.name = f'IMU_{package.parse()['serial']}'
+                    self.name = f'IMU_{package.parse()["serial"]}'
                     self._deviceInfoReceived.set()
                 elif isinstance(package, pkg.DataStatus):
                     self.status = package

@@ -26,7 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Set layout of ctypes structs explicitely to fix `_pack_ is not compatible with gcc-sysv layout` errors in Python 3.14.
+- Set layout of ctypes structs explicitly to fix `_pack_ is not compatible with gcc-sysv layout` errors in Python 3.14.
 
 ## [1.0.0] - 2025-10-15
 

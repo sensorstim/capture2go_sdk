@@ -22,6 +22,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-04-02
+
+### Fixed
+
+- Set layout of ctypes structs explicitely to fix `_pack_ is not compatible with gcc-sysv layout` errors in Python 3.14.
+
 ## [1.0.0] - 2025-10-15
 
 ### Added
@@ -38,6 +44,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial release.
 
-[unreleased]: https://github.com/sensorstim/capture2go_sdk/compare/v1.0.0...HEAD
+[unreleased]: https://github.com/sensorstim/capture2go_sdk/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/sensorstim/capture2go_sdk/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/sensorstim/capture2go_sdk/compare/v0.8.0...v1.0.0
 [0.8.0]: https://github.com/sensorstim/capture2go_sdk/releases/tag/v0.8.0

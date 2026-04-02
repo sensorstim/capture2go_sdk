@@ -72,6 +72,7 @@ class AbstractPackage(ctypes.Structure):
     This should be set to a unique value for each subclass, or None for abstract base classes.
     """
     _pack_ = 1
+    _layout_ = 'ms'
     _fields_ = []
 
     @classmethod
